@@ -1,0 +1,168 @@
+.header-bottom {
+  height: 12.7rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 99999999999;
+
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-bar {
+    display: none;
+  }
+
+  &-mobile-search {
+    display: none;
+  }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &-mobile-nav {
+    display: none;
+    position: fixed;
+    width: 27rem;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 0 0 1.2rem 0.1rem rgb(0 0 0 / 25%);
+    background-color: $white;
+    z-index: 1000000000;
+
+    &::before {
+      content: "";
+      display: block;
+      height: 5.4rem;
+    }
+  }
+
+  &-list {
+    display: inline-block;
+    margin-right: 5.5rem;
+  }
+
+  &-link {
+    font-size: 1.8rem;
+    font-family: $font-Oswald;
+    text-transform: uppercase;
+    color: $black;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      color: $yellow;
+      transition: 0.2s linear;
+    }
+  }
+
+  .active {
+    color: $yellow;
+  }
+
+  &-search {
+    font-size: 2.2rem;
+    font-weight: 400;
+  }
+
+  &-btn {
+    margin-left: 5.2rem;
+    padding: 1.1rem 3.5rem;
+    font-size: 1.6rem;
+    background-color: $yellow;
+    color: $white;
+    text-transform: uppercase;
+    border-radius: 3rem;
+    font-family: $font-Oswald;
+    line-height: 2.4rem;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      background-color: $blue;
+      transition: 0.2s linear;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    &-main {
+      flex-direction: column;
+      align-items: unset;
+    }
+
+    &-logo {
+      text-align: center;
+      margin-bottom: 2.2rem;
+    }
+
+    &-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    height: 5.6rem;
+    &-main {
+      flex-direction: unset;
+      align-items: center;
+    }
+
+    &-bar {
+      display: block;
+    }
+    &-nav {
+      display: none;
+    }
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+
+      i {
+        font-size: 2.5rem;
+        margin-right: 1.8rem;
+      }
+    }
+
+    &-mobile-search {
+      font-size: 2.2rem;
+      color: $yellow;
+      display: block;
+    }
+
+    &-show {
+      display: block;
+      animation: identifier 0.3s ease-out;
+    }
+
+    @keyframes identifier {
+      0% {
+        transform: translateX(-112%);
+      }
+
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    &-mobile-link {
+      padding: 1.1rem 5.6rem 1.1rem 1.6rem;
+      display: block;
+      color: $black-40;
+      font-size: 1.6rem;
+      font-family: $font-Oswald;
+    }
+  }
+  &-mobile-link-active {
+    color: $white;
+    background-color: $blue;
+  }
+}

@@ -1,0 +1,150 @@
+.hero {
+  background: url(../img/swiper-slide-1.jpg);
+  width: 100%;
+  height: 86.9rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+
+  --columns: 2;
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &-main {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: 29.5rem;
+  }
+
+  &-title {
+    font-size: 4.8rem;
+    color: $white;
+    font-family: $font-Oswald;
+  }
+
+  &-divider {
+    margin-top: 4rem;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: url(../img/divider-decorate.png);
+    }
+  }
+
+  &-desc {
+    margin-top: 4rem;
+    font-size: 1.8rem;
+    color: $white;
+    line-height: 2.4rem;
+  }
+
+  &-btn {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    border-radius: 3rem;
+    margin-top: 3rem;
+    padding: 1.1rem 0;
+    font-family: $font-Oswald;
+    color: $white;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+    text-align: center;
+    border: 0.1rem solid $white;
+    max-width: 19rem;
+    display: block;
+
+    &:hover {
+      background-color: $yellow;
+      transition: 0.2s linear;
+      border: none;
+    }
+  }
+
+  &-right {
+    width: 100%;
+  }
+
+  &-form {
+    border-radius: 0.8rem;
+    background-color: $white-20;
+    padding: 4rem 3.5rem;
+  }
+
+  &-form-title {
+    font-size: 2.4rem;
+    font-family: $font-Oswald;
+    color: $black-40;
+    font-weight: 400;
+    margin-bottom: 2.5rem;
+  }
+
+  &-form-wrap {
+    margin-bottom: 2.6rem;
+    label {
+      padding-left: 2.1rem;
+      font-size: 1.2rem;
+      color: $grey-light;
+    }
+  }
+
+  &-form-inline {
+    select {
+      margin-top: 0.8rem;
+      width: 100%;
+      background-color: $white;
+      border-radius: 3rem;
+      outline: none;
+      border: none;
+      padding: 2.2rem 4.4rem 2.2rem 2.4rem;
+    }
+  }
+
+  &-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &-search-btn {
+    padding: 1.4rem 3.8rem;
+    background-color: $yellow;
+    color: $white;
+    border-radius: 3rem;
+    border: none;
+    width: 100%;
+    font-size: 1.9rem;
+    font-family: $font-Oswald;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      background-color: $blue;
+      transition: 0.2s linear;
+    }
+  }
+
+  @media screen and (max-width: 1023px) {
+    position: relative;
+    --columns: 1;
+
+    &-main {
+      display: grid;
+      gap: 0;
+    }
+
+    &-left {
+      margin-right: 0;
+    }
+
+    &-right {
+      display: none;
+    }
+  }
+}
